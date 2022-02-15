@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница расчета</title>
+  </head>
+  <body>
+    <form method="post" action="">
+      {% csrf_token %}
+      Год: <br />
+      <input  type="integer" size="25" maxlength="30" value="{{ year }}"/>
+      <br />
+      Коэффициент: <br />
+      <input name="coeff" type="float" size="25" maxlength="30" value="{{ coeff }}" />
+      <br />
+      <button type="submit" class="btn btn-primary">Расчет</button>
+    </form>
+    <p>
+      {{ npv }}
+    </p>
+  </body>
+</html>
